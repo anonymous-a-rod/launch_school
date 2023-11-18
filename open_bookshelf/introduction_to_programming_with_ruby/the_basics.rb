@@ -1,5 +1,5 @@
 # exercise 1
-puts "aaron" + " " + "venema"
+puts "aaron venema"
 
 # exercise 2
 number = 5432
@@ -17,15 +17,14 @@ ones_digit = tens_remainder % 10
 puts ones_digit
 
 # exercise 3
-star_wars = {'Star Wars: Episode IV - A New Hope' => 1977,
-             'Star Wars: Episode V - The Empire Strikes Back' => 1980,
-             'Star Wars: Episode VI - Return of the Jedi' => 1983}
-
+star_wars = { 'Star Wars: Episode IV - A New Hope' => 1977,
+              'Star Wars: Episode V - The Empire Strikes Back' => 1980,
+              'Star Wars: Episode VI - Return of the Jedi' => 1983 }
 
 # exercise 4
 release_dates = []
 
-star_wars.each do |key, value|
+star_wars.each do |_, value|
   puts value
   release_dates.push value
 end
@@ -35,7 +34,7 @@ p release_dates
 # exercise 5
 def factorial(number)
   result = 1
-  while number >= 1 do
+  while number >= 1
     result *= number
     number -= 1
   end
