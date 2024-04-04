@@ -45,8 +45,7 @@
 #     puts word + 's'
 # end
 
-colors = 'blue pink yellow orange'
+# colors = 'blue pink yellow orange'
 
-puts colors.include?('yellow')
-puts colors.include?('purple')
-
+# puts colors.include?('yellow')
+# puts colors.include?('purple')
