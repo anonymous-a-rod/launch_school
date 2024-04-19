@@ -93,11 +93,59 @@
 # puts get_grade(95, 90, 93) == "A"
 # puts get_grade(50, 50, 95) == "D"
 
-def buy_fruit(something)
-  something.reduce([]) do |array, value|
-    value[1].times { array << value[0] }
-    array
-  end
-end
+# def buy_fruit(something)
+#   something.reduce([]) do |array, value|
+#     value[1].times { array << value[0] }
+#     array
+#   end
+# end
 
-puts buy_fruit([["apples", 3], ["orange", 1], ["bananas", 2]]) == ["apples", "apples", "apples", "orange", "bananas","bananas"]
+# puts buy_fruit([["apples", 3], ["orange", 1], ["bananas", 2]]) == ["apples", "apples", "apples", "orange", "bananas","bananas"]
+
+# def anagrams(words)
+#   anagrams = []
+
+#   words.each do |word|
+#     perms = word.split('').permutation.inject([]) { |perms, perm| perms << perm }
+
+#     anagrams.each do |anagram|
+#       perms.each do |perm|
+#         break anagram << word if anagram.include? perm.join('')
+#       end
+#     end
+
+#     anagrams << [word] unless anagrams.flatten.include? word
+#   end
+
+#   anagrams
+# end
+
+
+# words =  ['demo', 'none', 'tied', 'evil', 'dome', 'mode', 'live',
+#           'fowl', 'veil', 'wolf', 'diet', 'vile', 'edit', 'tide',
+#           'flow', 'neon', 'turd', 'dust']
+
+# p anagrams words
+
+# def sum(num)
+#     num.digits.sum
+# end
+
+# puts sum(23) == 5
+# puts sum(496) == 19
+# puts sum(123_456_789) == 45
+
+# 12345.digits #=> [5, 4, 3, 2, 1]
+
+# def oddities(array)
+#     array.select.with_index do |_, index|
+#         index.even?
+#     end
+# end
+
+# puts oddities([2, 3, 4, 5, 6]) == [2, 4, 6]
+# puts oddities([1, 2, 3, 4, 5, 6]) == [1, 3, 5]
+# puts oddities(['abc', 'def']) == ['abc']
+# puts oddities([123]) == [123]
+# puts oddities([]) == []
+# puts oddities([1, 2, 3, 4, 1]) == [1, 3, 1]

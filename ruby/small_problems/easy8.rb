@@ -81,16 +81,43 @@
 # puts repeater("Good job!") == "GGoooodd  jjoobb!!"
 # puts repeater('') == ''
 
-def double_consonants(string)
-    string.each_char.map do |c|
-        next c if c.downcase =~ /[^b-df-hj-np-tv-z]/
-        c * 2
-    end.join('')
-end
+# def double_consonants(string)
+#     string.each_char.map do |c|
+#         next c if c.downcase =~ /[^b-df-hj-np-tv-z]/
+#         c * 2
+#     end.join('')
+# end
 
-p double_consonants("String") # Output: "SSttrrinngg"
+# p double_consonants("String") # Output: "SSttrrinngg"
 
-puts double_consonants('String') == "SSttrrinngg"
-puts double_consonants("Hello-World!") == "HHellllo-WWorrlldd!"
-puts double_consonants("July 4th") == "JJullyy 4tthh"
-puts double_consonants('') == ""
+# puts double_consonants('String') == "SSttrrinngg"
+# puts double_consonants("Hello-World!") == "HHellllo-WWorrlldd!"
+# puts double_consonants("July 4th") == "JJullyy 4tthh"
+# puts double_consonants('') == ""
+
+# def reverse_sentence(string)
+#     string.split.reverse.join(' ')
+# end
+
+# puts reverse_sentence('Hello World') == 'World Hello'
+# puts reverse_sentence('Reverse these words') == 'words these Reverse'
+# puts reverse_sentence('') == ''
+# puts reverse_sentence('    ') == '' # Any number of spaces results in ''
+
+# def reverse_words(string)
+#     string.split.reduce([]) do |array, word|
+#         array << word.reverse
+#     end.join(' ')
+# end
+
+# puts reverse_words('Professional')          # => lanoisseforP
+# puts reverse_words('Walk around the block') # => klaW dnuora the kcolb
+# puts reverse_words('Launch School')         # => hcnuaL loohcS
+
+# def average(array)
+#     array.sum / array.length
+# end
+
+# puts average([1, 6]) == 3 # integer division: (1 + 6) / 2 -> 3
+# puts average([1, 5, 87, 45, 8, 8]) == 25
+# puts average([9, 47, 23, 95, 16, 52]) == 40
