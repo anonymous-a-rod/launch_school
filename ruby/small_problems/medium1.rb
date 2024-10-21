@@ -38,21 +38,50 @@
 # puts max_rotation(105) == 15 # the leading zero gets dropped
 # puts max_rotation(8_703_529_146) == 7_321_609_845
 
-def thousand_lights(n)
-  lights = Array.new n, false
+# def thousand_lights(n)
+#   lights = Array.new n, false
 
-  n.times do |index|
-    i = index + 1
-    lights.map!.with_index do |state, num|
-      number = num + 1
-      number % i == 0 ? !state : state
-    end
-  end
+#   n.times do |index|
+#     i = index + 1
+#     lights.map!.with_index do |state, num|
+#       number = num + 1
+#       number % i == 0 ? !state : state
+#     end
+#   end
   
-  lights.each_with_index.reduce([]) do |acc, (light_on, index)|
-    acc << index + 1 if light_on
-    acc
-  end 
+#   lights.each_with_index.reduce([]) do |acc, (light_on, index)|
+#     acc << index + 1 if light_on
+#     acc
+#   end 
+# end
+
+# p thousand_lights 10
+
+
+# star = '*'
+#  def diamond(number)
+#   break if number <= 0
+#   puts star
+#   star += '**'
+#   number - 1
+#   diamond(number)
+#   puts star
+#   star -= '**'
+#  end
+
+def diamond(number)
+  midpoint = (number / 2) + 1
+
+  diamond = ''
+  number.times do |index|
+    i = index + 1
+    diff = (midpoint - i).abs
+    stars = "*" * (number - (diff * 2))
+    diamond += (stars).center(number) + "\n"
+  end
+  diamond
 end
 
-p thousand_lights 10
+puts diamond(1)
+puts diamond(3)
+puts diamond(9)
