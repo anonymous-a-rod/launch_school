@@ -55,3 +55,41 @@ print(type(some_value2) is list)
 
 isinstance(some_value1, list)  # True
 isinstance(some_value2, list)  # False
+
+def contains(city, destinations):
+    i = 0
+    amount = len(destinations)
+
+    while i < amount:
+        if city == destinations[i]:
+            return True
+        i += 1
+    return False 
+
+destinations = ['Prague', 'London', 'Sydney', 'Belfast',
+                'Rome', 'Aruba', 'Paris', 'Bora Bora',
+                'Barcelona', 'Rio de Janeiro', 'Marrakesh',
+                'New York City']
+
+contains('Barcelona', destinations)  # True
+contains('Nashville', destinations)  # False
+
+
+passcode = ['11', 'jZ5', 'hQ3f*', '8!7g3', 'p3Fs']
+
+# Write some code here.
+# Expected output: 11-jZ5-hQ3f*-8!7g3-p3Fs
+
+print("-".join(passcode))
+
+grocery_list = ['paprika', 'tofu', 'garlic', 'quinoa',
+                'carrots', 'broccoli', 'hummus']
+
+for item in list(grocery_list):
+    print(item)
+    grocery_list.remove(item)
+# Your code.
+
+print(grocery_list)
+
+# an empty sequence is also falsey, so you could use while grocery_list and pop(0)
