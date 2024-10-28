@@ -167,4 +167,3 @@ print(is_balanced("((What)) (is this))?") == False)  # True
 print(is_balanced("Hey!") == True)                   # True
 print(is_balanced(")Hey!(") == False)                # True
 print(is_balanced("What ((is))) up(") == False)      # True
-
