@@ -103,7 +103,6 @@ def substrings(s):
     for i in range(len(s) + 1):
         for j in range(i + 1, len(s) + 1):
             substrings.append(s[i:j])
-    print(substrings)
     return substrings
 
 expected_result = [
@@ -115,3 +114,82 @@ expected_result = [
 ]
 
 print(substrings('abcde') == expected_result)  # True
+
+
+print("Palindromic Substrings")
+
+def palindromes(string):
+    return [s for s in substrings(string) if len(s) > 1 and s == s[::-1]]
+
+
+print(palindromes('abcd') == [])                  # True
+print(palindromes('madam') == ['madam', 'ada'])   # True
+
+print(palindromes('hello-madam-did-madam-goodbye') ==
+                  [
+                      'll', '-madam-', '-madam-did-madam-',
+                      'madam', 'madam-did-madam', 'ada',
+                      'adam-did-mada', 'dam-did-mad',
+                      'am-did-ma', 'm-did-m', '-did-',
+                      'did', '-madam-', 'madam', 'ada', 'oo',
+                  ])    # True
+
+print(palindromes('knitting cassettes') ==
+                  [
+                      'nittin', 'itti', 'tt', 'ss',
+                      'settes', 'ette', 'tt',
+                  ])    # True
+
+print('Inventory Item Transactions')
+
+def transactions_for(n, transactions):
+    return [transaction for transaction in transactions if transaction["id"] == n]
+
+transactions = [
+    {"id": 101, "movement": 'in',  "quantity":  5},
+    {"id": 105, "movement": 'in',  "quantity": 10},
+    {"id": 102, "movement": 'out', "quantity": 17},
+    {"id": 101, "movement": 'in',  "quantity": 12},
+    {"id": 103, "movement": 'out', "quantity": 20},
+    {"id": 102, "movement": 'out', "quantity": 15},
+    {"id": 105, "movement": 'in',  "quantity": 25},
+    {"id": 101, "movement": 'out', "quantity": 18},
+    {"id": 102, "movement": 'in',  "quantity": 22},
+    {"id": 103, "movement": 'out', "quantity": 15},
+]
+
+print(transactions_for(101, transactions) ==
+      [
+          {"id": 101, "movement": "in",  "quantity":  5},
+          {"id": 101, "movement": "in",  "quantity": 12},
+          {"id": 101, "movement": "out", "quantity": 18},
+      ]) # True
+
+print("Inventory Item Availability")
+
+def is_item_available(n, transactions):
+    item_transactions = transactions_for(n, transactions)
+    transactions_count = 0
+    for transaction in item_transactions:
+        if transaction["movement"] == "in":
+            transactions_count += transaction["quantity"]
+        else:
+            transactions_count -= transaction["quantity"]
+    return transactions_count > 0
+
+transactions = [
+    {"id": 101, "movement": 'in',  "quantity":  5},
+    {"id": 105, "movement": 'in',  "quantity": 10},
+    {"id": 102, "movement": 'out', "quantity": 17},
+    {"id": 101, "movement": 'in',  "quantity": 12},
+    {"id": 103, "movement": 'out', "quantity": 20},
+    {"id": 102, "movement": 'out', "quantity": 15},
+    {"id": 105, "movement": 'in',  "quantity": 25},
+    {"id": 101, "movement": 'out', "quantity": 18},
+    {"id": 102, "movement": 'in',  "quantity": 22},
+    {"id": 103, "movement": 'out', "quantity": 15},
+]
+
+print(is_item_available(101, transactions) == False)  # True
+print(is_item_available(103, transactions) == False)  # True
+print(is_item_available(105, transactions) == True)   # True
