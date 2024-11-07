@@ -163,3 +163,41 @@ print(is_prime(997) == True)             # True
 print(is_prime(998) == False)            # True
 print(is_prime(3_297_061) == True)       # True
 print(is_prime(23_297_061) == False)     # True
+
+print('Fibonacci Numbers (Procedural)')
+
+fibonaccis = { 1: 1, 2: 1 }
+
+def fibonacci(x):
+    if x in fibonaccis: return fibonaccis[x]
+    fibonaccis[x] = fibonacci(x - 1) + fibonacci(x - 2)
+    return fibonaccis[x]
+
+print(fibonacci(1) == 1)                  # True
+print(fibonacci(2) == 1)                  # True
+print(fibonacci(3) == 2)                  # True
+print(fibonacci(4) == 3)                  # True
+print(fibonacci(5) == 5)                  # True
+print(fibonacci(6) == 8)                  # True
+print(fibonacci(12) == 144)               # True
+print(fibonacci(20) == 6765)              # True
+print(fibonacci(50) == 12586269025)       # True
+print(fibonacci(75) == 2111485077978050)  # True
+
+# def find_fibonacci_index_by_length(n):
+#     index = 1
+#     fib_val = 1
+#     while fib_val <= n:
+#         fibonacci(x)
+
+# # All of these examples should print True
+# # The first 12 fibonacci numbers are: 1 1 2 3 5 8 13 21 34 55 89 144
+# print(find_fibonacci_index_by_length(2) == 7)
+# print(find_fibonacci_index_by_length(3) == 12)
+# print(find_fibonacci_index_by_length(10) == 45)
+# print(find_fibonacci_index_by_length(16) == 74)
+# print(find_fibonacci_index_by_length(100) == 476)
+# print(find_fibonacci_index_by_length(1000) == 4782)
+
+# # Next example might take a little while on older systems
+# print(find_fibonacci_index_by_length(10000) == 47847)
